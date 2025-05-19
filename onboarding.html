@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Derrick Onboarding</title>
+  <meta name="viewport" content="width=360, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <style>
+    .bg-page { background-color: #f8f9fa; }
+    .syne-font { font-family: "Syne", sans-serif; }
+    .border-subtle { border-color: #e2e2e2; }
+    .btn-primary { background-color: #5c5cff; }
+    .btn-primary:hover { background-color: #3535c6; }
+    .logo-placeholder { width: 56px; height: 36px; border: 2px solid #e2e2e2; display: flex; align-items: center; justify-content: center; border-radius: 0.5rem; background: #f8f9fa; font-size: 1rem; color: #9ca3af; }
+  </style>
+</head>
+<body class="bg-page syne-font text-primary h-screen flex items-center justify-center">
+  <div class="w-[360px] mx-auto flex flex-col bg-white shadow-xl rounded-xl overflow-hidden">
+
+    <!-- STEP 1: Value Proposition -->
+    <div id="step1" class="flex flex-col items-center px-7 py-8">
+      <div class="text-center font-bold text-lg mb-6">
+        Derrick lets you import<br>B2B leads from LinkedIn,<br>straight in this Google Sheet
+      </div>
+      <div class="flex gap-3 mb-7">
+        <div class="logo-placeholder">LOGO</div>
+        <div class="logo-placeholder">LOGO</div>
+        <div class="logo-placeholder">LOGO</div>
+      </div>
+      <div class="text-center font-semibold mb-2">10,000+ Companies use Derrick to</div>
+      <ul class="text-sm text-left mx-auto mb-6" style="max-width: 250px;">
+        <li class="mb-1">✔ Import Leads from LinkedIn Search</li>
+        <li class="mb-1">✔ Enrich a list of LinkedIn URLs</li>
+        <li class="mb-1">✔ Find Emails from Leads</li>
+        <li>✔ and much more</li>
+      </ul>
+      <button class="w-full py-3 rounded-lg btn-primary text-white text-base shadow bg-green-600 hover:bg-green-700 transition mb-8" onclick="showStep(2)">
+        Start Now
+      </button>
+      <div class="w-full flex flex-col items-center mt-auto pt-2">
+        <div class="text-xs text-secondary mb-1">Used by 10,000+ companies worldwide.</div>
+        <div class="text-xs text-secondary flex items-center gap-1">
+          <svg width="62" height="12" viewBox="0 0 62 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40.4409 11.058L43.7269 9.33L47.0139 11.058L46.3859 7.398L49.0449 4.806L45.3709 4.272L43.7269 0.942001L42.0839 4.272L38.4089 4.806L41.0679 7.398L40.4409 11.058Z" fill="#FFD230"/>
+          <path d="M56.455 0.942001L54.811 4.272L51.137 4.806L53.796 7.398L53.168 11.058L56.455 9.33L59.741 11.058L59.114 7.398L61.773 4.806L58.098 4.272L56.455 0.942001Z" fill="#FFD230"/>
+          <path d="M2.25905 11.058L5.54505 9.33L8.83205 11.058L8.20405 7.398L10.8631 4.806L7.18905 4.272L5.54505 0.942001L3.90205 4.272L0.227051 4.806L2.88605 7.398L2.25905 11.058Z" fill="#FFD230"/>
+          <path d="M14.9861 11.058L18.2731 9.33L21.5591 11.058L20.9321 7.398L23.5911 4.806L19.9161 4.272L18.2731 0.942001L16.6291 4.272L12.9551 4.806L15.6141 7.398L14.9861 11.058Z" fill="#FFD230"/>
+          <path d="M27.7129 11.058L30.9999 9.33L34.2869 11.058L33.6589 7.398L36.3179 4.806L32.6429 4.272L30.9999 0.942001L29.3569 4.272L25.6819 4.806L28.3409 7.398L27.7129 11.058Z" fill="#FFD230"/>
+          </svg>
+          Rated 5 stars on Google Workspace
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: Connect LinkedIn -->
+    <div id="step2" class="flex flex-col items-center px-7 py-8 hidden">
+      <div class="text-center font-bold text-lg mb-7">
+        Would you like to import<br>data from LinkedIn?
+      </div>
+      <ul class="text-sm text-left mx-auto mb-8" style="max-width: 260px;">
+        <li class="mb-1">✔ Import Leads from LinkedIn Search</li>
+        <li class="mb-1">✔ Enrich a list of LinkedIn URLs</li>
+        <li class="mb-1">✔ Find people on LinkedIn by their names</li>
+        <li>✔ and much more</li>
+      </ul>
+      <button class="w-full py-3 rounded-lg btn-primary text-white text-base shadow bg-green-600 hover:bg-green-700 transition mb-4">
+        <a href="li_at.html">Yes, connect LinkedIn now!</a>
+      </button>
+      <a href="homepage.html" class="block w-full text-center text-green-700 underline mb-7 text-base">
+        Not yet, I'm just browsing
+      </a>
+      <div class="w-full flex flex-col items-center mt-auto pt-2">
+        <div class="text-xs text-secondary mb-1">Used by 10,000+ companies worldwide.</div>
+        <div class="text-xs text-secondary flex items-center gap-1">
+          <svg width="62" height="12" viewBox="0 0 62 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40.4409 11.058L43.7269 9.33L47.0139 11.058L46.3859 7.398L49.0449 4.806L45.3709 4.272L43.7269 0.942001L42.0839 4.272L38.4089 4.806L41.0679 7.398L40.4409 11.058Z" fill="#FFD230"/>
+          <path d="M56.455 0.942001L54.811 4.272L51.137 4.806L53.796 7.398L53.168 11.058L56.455 9.33L59.741 11.058L59.114 7.398L61.773 4.806L58.098 4.272L56.455 0.942001Z" fill="#FFD230"/>
+          <path d="M2.25905 11.058L5.54505 9.33L8.83205 11.058L8.20405 7.398L10.8631 4.806L7.18905 4.272L5.54505 0.942001L3.90205 4.272L0.227051 4.806L2.88605 7.398L2.25905 11.058Z" fill="#FFD230"/>
+          <path d="M14.9861 11.058L18.2731 9.33L21.5591 11.058L20.9321 7.398L23.5911 4.806L19.9161 4.272L18.2731 0.942001L16.6291 4.272L12.9551 4.806L15.6141 7.398L14.9861 11.058Z" fill="#FFD230"/>
+          <path d="M27.7129 11.058L30.9999 9.33L34.2869 11.058L33.6589 7.398L36.3179 4.806L32.6429 4.272L30.9999 0.942001L29.3569 4.272L25.6819 4.806L28.3409 7.398L27.7129 11.058Z" fill="#FFD230"/>
+          </svg>
+          Rated 5 stars on Google Workspace
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    // Toggle between step 1 and 2 for demo
+    function showStep(step) {
+      document.getElementById('step1').classList.toggle('hidden', step === 2);
+      document.getElementById('step2').classList.toggle('hidden', step !== 2);
+    }
+  </script>
+</body>
+</html>
+

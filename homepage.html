@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Derrick App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <style>
+    .bg-page      { background-color: #f8f9fa; }
+    .bg-surface   { background-color: #ffffff; }
+    .text-primary   { color: #161616; }
+    .text-secondary { color: #555555; }
+    .border-subtle { border-color: #e2e2e2; }
+    .pill-active  { background-color: #e4e8ff; color: #1f2560; }
+    .syne-font {
+      font-family: "Syne", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body class="bg-page syne-font text-primary h-screen">
+  <div class="w-[360px] mx-auto h-full flex flex-col bg-surface shadow-xl rounded-lg overflow-hidden">
+    
+    <!-- HEADER -->
+    <div class="px-4 py-3 border-b border-subtle">
+      <div class="flex items-center gap-2">
+        <img src="https://media.licdn.com/dms/image/v2/C4E0BAQGTwgqv7-ghBg/company-logo_200_200/company-logo_200_200/0/1643290710547?e=2147483647&v=beta&t=b4LGnJ4Ax6UW8AOOz1zt6t4Lze8kvgXJkvCg4gZTa9I" alt="Logo" class="w-6 h-6 rounded">
+        <span class="font-bold">Derrick</span>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="px-4 py-2 border-b border-subtle flex-shrink-0 overflow-x-auto">
+      <div class="flex space-x-2">
+        <button class="px-3 py-1 rounded-full pill-active whitespace-nowrap text-sm">All</button>
+        <button class="px-3 py-1 rounded-full text-secondary hover:bg-indigo-50 whitespace-nowrap text-sm">Most Popular</button>
+        <button class="px-3 py-1 rounded-full text-secondary hover:bg-indigo-50 whitespace-nowrap text-sm">New</button>
+        <button class="px-3 py-1 rounded-full text-secondary hover:bg-indigo-50 whitespace-nowrap text-sm">LinkedIn</button>
+        <button class="px-3 py-1 rounded-full text-secondary hover:bg-indigo-50 whitespace-nowrap text-sm">AI</button>
+        <button class="px-3 py-1 rounded-full text-secondary hover:bg-indigo-50 whitespace-nowrap text-sm">Email</button>
+        <button class="px-3 py-1 rounded-full text-secondary hover:bg-indigo-50 whitespace-nowrap text-sm">Lead</button>
+        <button class="px-3 py-1 rounded-full text-secondary hover:bg-indigo-50 whitespace-nowrap text-sm">Company</button>
+      </div>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="px-4 py-3 border-b border-subtle flex-shrink-0">
+      <input type="text"
+             placeholder="Search features…"
+             class="w-full p-2 border border-subtle rounded text-sm bg-surface focus:outline-none focus:ring-2 focus:ring-indigo-200" />
+    </div>
+
+    <!-- FEATURE LIST (scrollable) -->
+    <div class="p-4 space-y-3 overflow-y-auto flex-1">
+      <a href="features.html" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">🤖</span></div>
+        <div>
+          <div class="font-medium">Enrich Profiles</div>
+          <div class="text-xs text-secondary">Enrich LinkedIn profile data effortlessly.</div>
+        </div>
+      </a>
+      <a href="features.html?isLinkedInConnected=false" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">🔍</span></div>
+        <div>
+          <div class="font-medium">Search Profiles</div>
+          <div class="text-xs text-secondary">Search LinkedIn profiles by keywords.</div>
+        </div>
+      </a>
+      <a href="features.html?needCredits=true" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">⬇️</span></div>
+        <div>
+          <div class="font-medium">Import Profiles</div>
+          <div class="text-xs text-secondary">Import profile details to sheets.</div>
+        </div>
+      </a>
+      <a href="#" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">🏭</span></div>
+        <div>
+          <div class="font-medium">Enrich Companies</div>
+          <div class="text-xs text-secondary">Gather company details quickly.</div>
+        </div>
+      </a>
+      <a href="#" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">🔎</span></div>
+        <div>
+          <div class="font-medium">Search Companies</div>
+          <div class="text-xs text-secondary">Lookup companies by name.</div>
+        </div>
+      </a>
+      <a href="#" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">📥</span></div>
+        <div>
+          <div class="font-medium">Import Companies</div>
+          <div class="text-xs text-secondary">Import company data into sheets.</div>
+        </div>
+      </a>
+      <a href="#" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">✉️</span></div>
+        <div>
+          <div class="font-medium">Search Emails</div>
+          <div class="text-xs text-secondary">Find emails from names.</div>
+        </div>
+      </a>
+      <a href="#" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">🧑‍🤝‍🧑</span></div>
+        <div>
+          <div class="font-medium">Find Genders</div>
+          <div class="text-xs text-secondary">Detect gender based on names.</div>
+        </div>
+      </a>
+      <a href="#" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">📧</span></div>
+        <div>
+          <div class="font-medium">Name from Email</div>
+          <div class="text-xs text-secondary">Extract names from email address.</div>
+        </div>
+      </a>
+      <a href="#" class="flex items-start gap-3 p-3 border border-subtle rounded hover:bg-indigo-50">
+        <div class="p-2 bg-indigo-100 rounded"><span class="text-xl">🗑️</span></div>
+        <div>
+          <div class="font-medium">Remove Duplicates</div>
+          <div class="text-xs text-secondary">Clean duplicate rows in sheet.</div>
+        </div>
+      </a>
+    </div>
+
+<!-- FOOTER (fixed) -->
+    <div class="flex flex-col px-4 py-3 border-t border-subtle bg-surface flex-shrink-0 space-y-2 text-sm">
+      <div class="flex justify-between">
+        <a href="#" class="text-secondary hover:underline">Settings</a>
+        <a href="#" class="text-secondary hover:underline">Help</a>
+      </div>
+      <div class="text-secondary"><strong>Credits</strong> 329,758</div>
+            <button class="w-full px-3 py-2 bg-white text-black border-2 border-solid text-sm rounded hover:bg-red-500 hover:text-white">
+        Upgrade Plan →
+      </button>
+      <p class="text-xs text-center text-secondary">Auto renew on 31 May • 12:01</p>
+    </div>
+
+  </div>
+</body>
+</html>

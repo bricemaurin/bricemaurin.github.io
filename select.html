@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Derrick Navigation</title>
+  <meta name="viewport" content="width=360, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <style>
+    .bg-page { background: #f8f9fa; }
+    .syne-font { font-family: "Syne", sans-serif; }
+    .border-subtle { border-color: #e2e2e2; }
+    .btn-nav { background: #eef2ff; color: #222a6a; border-radius: 0.7em; font-weight: bold; }
+    .btn-nav:hover { background: #d1d5ff; }
+  </style>
+</head>
+<body class="bg-page syne-font text-primary min-h-screen flex items-center justify-center">
+  <div class="w-[360px] mx-auto flex flex-col gap-8 bg-white rounded-xl shadow-xl px-6 py-8">
+
+    <!-- SECTION 1: USER TYPE -->
+    <div>
+      <div class="font-bold text-lg mb-3">Test Onboarding Flow</div>
+      <div class="flex flex-col gap-3">
+        <button class="w-full py-3 btn-nav text-lg border border-subtle" onclick="window.open('welcome-back.html', '_blank')">
+          I’m an existing user
+        </button>
+        <button class="w-full py-3 btn-nav text-lg border border-subtle" onclick="window.open('onboarding.html', '_blank')">
+          I’m a new user
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION 2: PAGE NAVIGATION -->
+    <div>
+      <div class="font-bold text-lg mb-3">Open Any Page</div>
+      <div class="flex flex-col gap-3">
+        <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('welcome-back.html', '_blank')">welcome-back.html</button>
+        <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('error.html', '_blank')">error.html</button>
+        <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('homepage.html', '_blank')">homepage.html</button>
+        <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('li_at.html', '_blank')">li_at.html</button>
+        <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('onboarding.html', '_blank')">onboarding.html</button>
+        <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('plans.html', '_blank')">plans.html</button>
+        <!-- Features page with state toggles -->
+        <div class="border border-subtle rounded-xl p-4 mt-1 bg-[#f6f8ff] flex flex-col gap-2">
+          <div class="font-semibold text-sm mb-2 text-[#222a6a]">features.html<br><span class="text-xs text-secondary">Choose state and open</span></div>
+          <form id="featuresForm" class="flex flex-col gap-2">
+            <div class="flex gap-3 items-center">
+              <label class="flex items-center gap-1 text-sm">
+                <input type="checkbox" id="isLinkedInConnected" class="accent-indigo-600" checked>
+                isLinkedInConnected
+              </label>
+              <label class="flex items-center gap-1 text-sm">
+                <input type="checkbox" id="isImporting" class="accent-indigo-600">
+                isImporting
+              </label>
+              <label class="flex items-center gap-1 text-sm">
+                <input type="checkbox" id="needCredits" class="accent-indigo-600">
+                needCredits
+              </label>
+            </div>
+            <button type="submit" class="w-full py-2 btn-nav border border-subtle mt-2">Open features.html with state</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('featuresForm').onsubmit = function(e) {
+      e.preventDefault();
+      const params = [
+        'isLinkedInConnected=' + document.getElementById('isLinkedInConnected').checked,
+        'isImporting=' + document.getElementById('isImporting').checked,
+        'needCredits=' + document.getElementById('needCredits').checked,
+      ].join('&');
+      window.open('features.html?' + params, '_blank');
+    }
+  </script>
+</body>
+</html>

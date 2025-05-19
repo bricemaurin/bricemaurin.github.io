@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Mismatch – Derrick</title>
+  <meta name="viewport" content="width=360, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <style>
+    .bg-page      { background-color: #f8f9fa; }
+    .syne-font {
+      font-family: "Syne", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .modal-hidden { display: none !important; }
+  </style>
+</head>
+<body class="bg-page syne-font text-primary h-screen flex items-center justify-center">
+  <div id="modal" class="w-[360px] mx-auto bg-white rounded-xl shadow-lg px-7 py-8 flex flex-col items-center relative">
+    <div class="text-xl font-bold mb-4 text-red-700 text-center">
+      Google Sheet account mismatch
+    </div>
+    <div class="text-base text-center mb-6 text-primary">
+      You are connected to Google Sheet as <span id="gs-email" class="font-bold text-black">example@domain.com</span>
+      <br>
+      but Derrick is connected as <span id="derrick-email" class="font-bold text-black">another@domain.com</span>.
+      <br><br>
+      Please log in to Google Sheet and Derrick with the same email to use all features.
+    </div>
+    <button class="w-full py-3 rounded-xl bg-red-600 text-white font-bold text-base shadow hover:bg-red-700 transition mb-4">
+      Reconnect with correct account
+    </button>
+    <div class="text-center text-sm text-secondary mt-2">
+      If you need help, please <a href="https://support.derrick-app.com/" target="_blank" class="text-blue-700 hover:underline">contact our support</a>.
+    </div>
+  </div>
+  <script>
+    // Set these values dynamically if needed
+    document.getElementById('gs-email').textContent = 'example@domain.com';
+    document.getElementById('derrick-email').textContent = 'another@domain.com';
+    // Close modal logic
+    document.getElementById('closeModal').onclick = function() {
+      document.getElementById('modal').classList.add('modal-hidden');
+    };
+  </script>
+</body>
+</html>
