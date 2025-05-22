@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cancel Plan – Warning</title>
+  <meta name="viewport" content="width=360, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <style>
+    .syne-font {
+      font-family: "Syne", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .modal-shadow { box-shadow: 0 6px 32px 0 rgba(20,20,20,0.09);}
+  </style>
+</head>
+<body class="syne-font bg-[#f8f9fa] min-h-screen flex items-center justify-center">
+
+  <div class="w-[370px] bg-white rounded-2xl modal-shadow px-6 py-7 relative flex flex-col items-center">
+    <!-- Close button -->
+    <button id="closeModal" class="absolute right-4 top-4 p-2 rounded-full hover:bg-gray-100 transition" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-width="2" d="M6 6l12 12M6 18L18 6"/>
+      </svg>
+    </button>
+    <!-- Title -->
+    <div class="w-full flex items-center mb-3 mt-1">
+      <span class="mr-2 text-lg">⚠️</span>
+      <span class="text-[1.3rem] font-bold text-red-700" style="letter-spacing:-0.5px;">Cancel Plan</span>
+    </div>
+    <!-- Text -->
+    <div class="w-full text-base text-[#232323] leading-relaxed mb-4" style="font-weight: 500;">
+      <div class="mb-2">You will be moved to the Free plan at the end of the current subscription <span class="font-semibold">31 May 2025</span>.</div>
+      <div>Your <span class="text-red-600 font-extrabold" style="letter-spacing:1px;">10,000</span> credits will be available until <span class="font-semibold">30 June 2025</span>, then you will get the regular <span class="font-semibold">200 monthly credits</span> included in the Free plan.</div>
+    </div>
+    <!-- Orange CTA -->
+    <button class="w-full py-3 rounded-xl bg-orange-500 text-white shadow hover:bg-orange-600 transition mb-3">
+      Confirm Cancellation
+    </button>
+    <!-- Gray CTA -->
+    <button class="w-full py-3 rounded-xl bg-gray-200 text-gray-800 text-lg hover:bg-gray-300 transition">
+      Stay on Super Plan
+    </button>
+  </div>
+
+  <script>
+    document.getElementById('closeModal').onclick = function() {
+      document.querySelector('body').innerHTML = '';
+    };
+  </script>
+</body>
+</html>

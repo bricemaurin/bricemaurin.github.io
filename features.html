@@ -37,9 +37,19 @@
       <h1 class="font-semibold text-lg text-primary">Crawl Websites</h1>
     </div>
 
+    <!-- PAID FEATURE -->
+    <div id="paidFeature" class="hidden p-4 text-sm text-green-900 bg-green-100 border border-green-400 rounded-md mx-4 my-3">
+      🔐 This feature is only available to Paid users. To use it, you need to upgrade your account.
+      <div class="mt-2">
+        <a href="plans.html">
+          <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900 text-sm w-full">View Plans</button>
+        </a>
+      </div>
+    </div>
+
     <!-- BLOCKED MESSAGE -->
     <div id="blockedMessage" class="hidden p-4 text-sm text-blue-900 bg-blue-100 border border-blue-400 rounded-md mx-4 my-3">
-      ⚠️ To use the Website Crawler, please connect your LinkedIn account. This feature requires authentication to function properly.
+      🔄 To use the Website Crawler, please connect your LinkedIn account. This feature requires authentication to function properly.
       <div class="mt-2">
         <a href="li_at.html">
           <button class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-900 text-sm w-full">Connect LinkedIn</button>
@@ -49,7 +59,7 @@
 
     <!-- CREDIT WARNING -->
     <div id="creditWarning" class="hidden p-4 text-sm text-green-900 bg-green-100 border border-green-400 rounded-md mx-4 my-3">
-      ⚠️ You have 0 credit left. You need to get more credits to finish this process.
+      🚫 You have 0 credit left. You need to get more credits to finish this process.
       <div class="mt-2">
         <a href="plans.html">
           <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900 text-sm w-full">View Plans</button>
@@ -78,8 +88,8 @@
     <div class="p-4 flex-1 overflow-y-auto space-y-4" id="formSection">
 
       <div id="formControls">
-        <label class="block text-sm text-secondary">Choose URL column</label>
-        <select id="urlColumn" class="w-full p-2 border border-subtle rounded bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-amber-200">
+        <label class="block text-sm text-secondary mb-3">Choose URL column</label>
+        <select id="urlColumn" class="w-full p-4 border border-subtle rounded bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-amber-200 mb-1">
           <option value="">-- select URL column --</option>
           <option value="A">Column A</option>
           <option value="B">Column B</option>
@@ -139,12 +149,14 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       // Use GET params, fallback to true/false defaults as you wish
-      const isLinkedInConnected = getBoolParam('isLinkedInConnected', true);
+      const isLinkedInConnected = getBoolParam('isLinkedinConnected',true);
       const isImporting = getBoolParam('isImporting', false);
       const needCredits = getBoolParam('needCredits', false);
+      const paid = getBoolParam('paid', false);
 
       const blockedMsg = document.getElementById('blockedMessage');
       const creditWarning = document.getElementById('creditWarning');
+      const paidFeature = document.getElementById('paidFeature');
       const formSection = document.getElementById('formSection');
       const importingState = document.getElementById('importingState');
       const select = document.getElementById('urlColumn');
@@ -153,19 +165,22 @@
       const progress = document.getElementById('progressBar');
       const lines = document.getElementById('linesImported');
 
-      if (!isLinkedInConnected) {
+      // Hide all alerts by default
+      blockedMsg.classList.add('hidden');
+      creditWarning.classList.add('hidden');
+      paidFeature.classList.add('hidden');
+      formSection.classList.remove('hidden');
+
+      if (paid) {
+        paidFeature.classList.remove('hidden');
+        formSection.classList.add('hidden');
+      } else if (!isLinkedInConnected) {
         blockedMsg.classList.remove('hidden');
-        return;
-      } else {
-        blockedMsg.classList.add('hidden');
-        formSection.classList.remove('hidden');
+        formSection.classList.add('hidden');
+      } else if (needCredits) {
+        creditWarning.classList.remove('hidden');
       }
 
-      if (needCredits) {
-        creditWarning.classList.remove('hidden');
-      } else {
-        creditWarning.classList.add('hidden');
-      }
 
       if (isImporting) {
         const formControls = document.getElementById('formControls');

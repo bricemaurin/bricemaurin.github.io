@@ -36,6 +36,7 @@
       <div class="flex flex-col gap-3">
         <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('welcome-back.html', '_blank')">welcome-back.html</button>
         <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('error.html', '_blank')">error.html</button>
+        <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('warning.html', '_blank')">warning.html</button>
         <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('homepage.html', '_blank')">homepage.html</button>
         <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('li_at.html', '_blank')">li_at.html</button>
         <button class="w-full py-3 btn-nav border border-subtle" onclick="window.open('onboarding.html', '_blank')">onboarding.html</button>
@@ -46,16 +47,20 @@
           <form id="featuresForm" class="flex flex-col gap-2">
             <div class="flex gap-3 items-center">
               <label class="flex items-center gap-1 text-sm">
+                <input type="checkbox" id="paid" class="accent-indigo-600" checked>
+                Paid
+              </label>
+              <label class="flex items-center gap-1 text-sm">
                 <input type="checkbox" id="isLinkedInConnected" class="accent-indigo-600" checked>
                 isLinkedInConnected
               </label>
               <label class="flex items-center gap-1 text-sm">
-                <input type="checkbox" id="isImporting" class="accent-indigo-600">
-                isImporting
-              </label>
-              <label class="flex items-center gap-1 text-sm">
                 <input type="checkbox" id="needCredits" class="accent-indigo-600">
                 needCredits
+              </label>
+              <label class="flex items-center gap-1 text-sm">
+                <input type="checkbox" id="isImporting" class="accent-indigo-600">
+                isImporting
               </label>
             </div>
             <button type="submit" class="w-full py-2 btn-nav border border-subtle mt-2">Open features.html with state</button>
@@ -68,6 +73,7 @@
     document.getElementById('featuresForm').onsubmit = function(e) {
       e.preventDefault();
       const params = [
+        'paid=' + document.getElementById('paid').checked,
         'isLinkedInConnected=' + document.getElementById('isLinkedInConnected').checked,
         'isImporting=' + document.getElementById('isImporting').checked,
         'needCredits=' + document.getElementById('needCredits').checked,
